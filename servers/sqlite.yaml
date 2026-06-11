@@ -1,0 +1,35 @@
+name: SQLite
+slug: sqlite
+description: |
+  Query a SQLite database file. Includes schema inspection and arbitrary
+  SELECT queries. Useful for local data analysis.
+
+repo: https://github.com/modelcontextprotocol/servers
+maintainer: modelcontextprotocol
+license: MIT
+
+language: python
+transport: stdio
+auth: none
+status: stable
+
+tools_exposed:
+  - read_query
+  - write_query
+  - create_table
+  - list_tables
+  - describe_table
+
+data_access:
+  - "Tables and rows in the SQLite file"
+
+install:
+  command: uvx mcp-server-sqlite --db-path /path/to/database.db
+  notes: |
+    Path to .db file is mandatory.
+
+categories:
+  - database
+  - data
+
+last_verified: 2026-04-01

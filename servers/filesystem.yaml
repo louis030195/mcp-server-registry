@@ -1,0 +1,38 @@
+name: Filesystem
+slug: filesystem
+description: |
+  Read, write, and search files in a configured allowed directory. The most
+  commonly used MCP server. Lets Claude inspect and modify project files.
+
+repo: https://github.com/modelcontextprotocol/servers
+maintainer: modelcontextprotocol
+license: MIT
+
+language: typescript
+transport: stdio
+auth: none
+status: stable
+
+tools_exposed:
+  - read_file
+  - write_file
+  - edit_file
+  - search_files
+  - list_directory
+  - move_file
+  - create_directory
+
+data_access:
+  - "Files within the configured allowed directory"
+
+install:
+  command: npx -y @modelcontextprotocol/server-filesystem /path/to/allowed/dir
+  notes: |
+    Path is mandatory. Server only allows access to files within that path.
+    Multiple paths can be passed as additional args.
+
+categories:
+  - filesystem
+  - development
+
+last_verified: 2026-04-01

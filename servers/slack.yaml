@@ -1,0 +1,37 @@
+name: Slack
+slug: slack
+description: |
+  Read messages, send messages, list channels, manage reactions. Requires
+  a Slack bot token with appropriate scopes.
+
+repo: https://github.com/modelcontextprotocol/servers
+maintainer: modelcontextprotocol
+license: MIT
+
+language: typescript
+transport: stdio
+auth: bearer-token
+status: stable
+
+tools_exposed:
+  - slack_list_channels
+  - slack_post_message
+  - slack_reply_to_thread
+  - slack_get_channel_history
+  - slack_get_thread_replies
+
+data_access:
+  - "Slack workspace data accessible to the bot user"
+
+install:
+  command: npx -y @modelcontextprotocol/server-slack
+  notes: |
+    Requires SLACK_BOT_TOKEN and SLACK_TEAM_ID environment variables.
+    Bot needs scopes: channels:history, channels:read, chat:write,
+    reactions:read, reactions:write, users:read.
+
+categories:
+  - communication
+  - productivity
+
+last_verified: 2026-04-01

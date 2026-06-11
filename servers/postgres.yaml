@@ -1,0 +1,33 @@
+name: Postgres
+slug: postgres
+description: |
+  Query a Postgres database. Read-only by default for safety. Schema
+  introspection plus arbitrary SELECT queries.
+
+repo: https://github.com/modelcontextprotocol/servers
+maintainer: modelcontextprotocol
+license: MIT
+
+language: typescript
+transport: stdio
+auth: api-key
+status: stable
+
+tools_exposed:
+  - query
+  - list_tables
+  - describe_table
+
+data_access:
+  - "Tables and rows in the connected Postgres database"
+
+install:
+  command: npx -y @modelcontextprotocol/server-postgres "postgresql://user:pass@host/db"
+  notes: |
+    Connection string passed as argument. Use a read-only DB user for safety.
+
+categories:
+  - database
+  - data
+
+last_verified: 2026-04-01

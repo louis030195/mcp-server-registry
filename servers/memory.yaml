@@ -1,0 +1,38 @@
+name: Memory
+slug: memory
+description: |
+  A persistent key-value store that survives across conversations. Lets
+  Claude remember facts about the user, the project, or ongoing work.
+  Stored as a knowledge graph (entities + relations).
+
+repo: https://github.com/modelcontextprotocol/servers
+maintainer: modelcontextprotocol
+license: MIT
+
+language: typescript
+transport: stdio
+auth: none
+status: stable
+
+tools_exposed:
+  - create_entities
+  - create_relations
+  - add_observations
+  - delete_entities
+  - search_nodes
+  - read_graph
+
+data_access:
+  - "Local memory file (JSON)"
+
+install:
+  command: npx -y @modelcontextprotocol/server-memory
+  notes: |
+    Memory file path defaults to ~/.mcp/memory.json; configurable via
+    MEMORY_FILE_PATH env var.
+
+categories:
+  - data
+  - productivity
+
+last_verified: 2026-04-01

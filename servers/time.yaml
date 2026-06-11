@@ -1,0 +1,30 @@
+name: Time
+slug: time
+description: |
+  Timezone conversions, date math, and current-time queries. Solves the
+  "what's current time in Tokyo when it's 3pm in New York" class of question.
+
+repo: https://github.com/modelcontextprotocol/servers
+maintainer: modelcontextprotocol
+license: MIT
+
+language: python
+transport: stdio
+auth: none
+status: stable
+
+tools_exposed:
+  - get_current_time
+  - convert_time
+
+data_access:
+  - "None (uses system clock and tzdata)"
+
+install:
+  command: uvx mcp-server-time
+
+categories:
+  - productivity
+  - other
+
+last_verified: 2026-04-01

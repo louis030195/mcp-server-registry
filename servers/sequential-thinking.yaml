@@ -1,0 +1,30 @@
+name: Sequential Thinking
+slug: sequential-thinking
+description: |
+  A meta-tool that provides Claude with structured multi-step reasoning. Each
+  thought is recorded; later thoughts can revise earlier ones. Useful for
+  complex problems that benefit from explicit decomposition.
+
+repo: https://github.com/modelcontextprotocol/servers
+maintainer: modelcontextprotocol
+license: MIT
+
+language: typescript
+transport: stdio
+auth: none
+status: stable
+
+tools_exposed:
+  - sequentialthinking
+
+data_access:
+  - "None (in-memory thought tracking only)"
+
+install:
+  command: npx -y @modelcontextprotocol/server-sequential-thinking
+
+categories:
+  - reasoning
+  - ai
+
+last_verified: 2026-04-01

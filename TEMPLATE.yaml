@@ -1,0 +1,59 @@
+# MCP server entry template
+# Copy to servers/your-server-name.yaml and fill in.
+
+name: Example Server
+slug: example-server
+description: |
+  One-paragraph description of what the server does. What tools does it
+  expose? What data does it access? Who would use it?
+
+# Source / homepage
+repo: https://github.com/example-org/example-mcp-server
+homepage: https://example.com  # optional, if different from repo
+maintainer: example-org
+license: MIT
+
+# Technical details
+language: python              # python, node, typescript, go, rust, etc.
+transport: stdio              # stdio, sse, http
+auth: none                    # none, oauth, api-key, bearer-token, custom
+status: stable                # stable, beta, alpha, unmaintained
+
+# What it does
+tools_exposed:
+  - search_thing
+  - read_thing
+  - update_thing
+data_access:
+  - "Local files in a configured directory"
+  - "API calls to example.com"
+
+# How to install and use
+install:
+  command: uvx example-mcp-server
+  notes: |
+    Optional notes on installation: env vars needed, config file format, etc.
+
+config_example: |
+  {
+    "mcpServers": {
+      "example": {
+        "command": "uvx",
+        "args": ["example-mcp-server"],
+        "env": {
+          "EXAMPLE_API_KEY": "..."
+        }
+      }
+    }
+  }
+
+# Categorization
+categories:
+  - filesystem
+  - data
+  - search
+  # Pick from: filesystem, database, version-control, communication, search,
+  # productivity, development, reasoning, web, ai, finance, other
+
+# When was this entry last verified to be working?
+last_verified: 2026-05-01

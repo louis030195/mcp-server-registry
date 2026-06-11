@@ -1,0 +1,38 @@
+name: GitHub
+slug: github
+description: |
+  Search repos, read files, create issues, manage PRs. Requires a GitHub
+  personal access token or GitHub App credentials.
+
+repo: https://github.com/modelcontextprotocol/servers
+maintainer: modelcontextprotocol
+license: MIT
+
+language: typescript
+transport: stdio
+auth: bearer-token
+status: stable
+
+tools_exposed:
+  - search_repositories
+  - get_file_contents
+  - create_issue
+  - create_pull_request
+  - list_issues
+  - list_pull_requests
+
+data_access:
+  - "GitHub repos, issues, PRs based on token scopes"
+
+install:
+  command: npx -y @modelcontextprotocol/server-github
+  notes: |
+    Set GITHUB_PERSONAL_ACCESS_TOKEN environment variable.
+    Token scopes determine what tools work; for read-only use, use a
+    fine-grained PAT with minimal scopes.
+
+categories:
+  - version-control
+  - development
+
+last_verified: 2026-04-01

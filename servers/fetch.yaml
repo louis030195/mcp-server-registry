@@ -1,0 +1,32 @@
+name: Fetch
+slug: fetch
+description: |
+  Fetch any URL and return its content (HTML, JSON, etc.). Optionally
+  converts HTML to markdown. The general-purpose web access server.
+
+repo: https://github.com/modelcontextprotocol/servers
+maintainer: modelcontextprotocol
+license: MIT
+
+language: python
+transport: stdio
+auth: none
+status: stable
+
+tools_exposed:
+  - fetch
+
+data_access:
+  - "Any URL the host network can reach"
+
+install:
+  command: uvx mcp-server-fetch
+  notes: |
+    Configurable user-agent and timeout. Be aware: gives Claude broad
+    web access; pair with appropriate sandboxing for production.
+
+categories:
+  - web
+  - search
+
+last_verified: 2026-04-01

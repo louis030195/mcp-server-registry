@@ -1,0 +1,33 @@
+name: Brave Search
+slug: brave-search
+description: |
+  Web search via the Brave Search API. Returns ranked results with snippets.
+  Lower-cost alternative to Google's Custom Search API.
+
+repo: https://github.com/modelcontextprotocol/servers
+maintainer: modelcontextprotocol
+license: MIT
+
+language: typescript
+transport: stdio
+auth: api-key
+status: stable
+
+tools_exposed:
+  - brave_web_search
+  - brave_local_search
+
+data_access:
+  - "Brave Search API results"
+
+install:
+  command: npx -y @modelcontextprotocol/server-brave-search
+  notes: |
+    Set BRAVE_API_KEY environment variable. Free tier available
+    at brave.com/search/api.
+
+categories:
+  - search
+  - web
+
+last_verified: 2026-04-01
