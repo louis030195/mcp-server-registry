@@ -70,6 +70,10 @@ After installing, configure your MCP client (Claude Desktop, Cursor, Claude Code
 - **Not endorsed by the MCP project.** This is a community catalog, not the official directory.
 - **Not a hosted runtime.** This repo only lists servers; it doesn't run them.
 
+## More
+
+Part of a catalog of single-file browser tools and plain-language references, all MIT licensed and dependency-free: [0xelitesystem.github.io](https://0xelitesystem.github.io/). Built by [elitesystem.ai](https://elitesystem.ai).
+
 ## License
 
 MIT. Each server entry is MIT licensed; copying one into your own list is fine.
